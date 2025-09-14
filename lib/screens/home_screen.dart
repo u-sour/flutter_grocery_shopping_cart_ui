@@ -4,6 +4,7 @@ import 'package:flutter_shopping_cart/models/item_model.dart';
 import 'package:flutter_shopping_cart/providers/cart_provider.dart';
 import 'package:flutter_shopping_cart/router/router_utils.dart';
 import 'package:flutter_shopping_cart/utils/constant.dart';
+import 'package:flutter_shopping_cart/utils/responsive/responsive_layout.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
@@ -73,7 +74,11 @@ class HomeScreen extends StatelessWidget {
                       builder: (_, data, _) => GridView.builder(
                         itemCount: data.length,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
+                          crossAxisCount: ResponsiveLayout.isLaptop(context)
+                              ? 3
+                              : ResponsiveLayout.isDesktop(context)
+                              ? 4
+                              : 2,
                           crossAxisSpacing: AppStyle.spacing,
                           mainAxisSpacing: AppStyle.spacing,
                         ),
