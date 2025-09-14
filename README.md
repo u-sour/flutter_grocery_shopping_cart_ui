@@ -1,6 +1,6 @@
 # flutter_shopping_cart
 
-A new Flutter project.
+A simple Flutter UI project for a grocery shopping cart app, showcasing product listing, cart management, and a clean, modern design.
 
 ## Getting Started
 
